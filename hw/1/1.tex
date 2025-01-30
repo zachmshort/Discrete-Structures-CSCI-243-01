@@ -28,11 +28,42 @@
     \subsection{State the inverse of this proposition.} If I am not a senior at W\&M, then I have not declared a major." 
     \subsection{State the contrapositive of this proposition.} If I have not declared my major, then I am not a senior at W\&M. 
     \subsection{For each of the above, state whether it is always true, sometimes true, or never true.} 
-    \subsubsection{}test
+        \subsubsection{}Sometimes true
+        \subsubsection{}Sometimes true
+        \subsubsection{}Sometimes true
 
 \section{Construct a truth table for each of the following compound propositions:}
-    \subsection{} 
-    \subsection{} 
+    \subsection{\texorpdfstring{$(\neg p \to q) \leftrightarrow (p \oplus \neg q)$}{(¬p → q) ↔ (p ⊕ ¬q)}}
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                $p$ & $q$ & $\neg p$ & $\neg p \to q$ & $p \oplus \neg q$ & $(\neg p \to q) \leftrightarrow (p \oplus \neg q)$ \\
+                \hline
+                T & T &   &   &   &   \\
+                T & F &   &   &   &   \\
+                F & T &   &   &   &   \\
+                F & F &   &   &   &   \\
+                \hline
+            \end{tabular}
+        \end{center}
+        
+    \subsection{\texorpdfstring{$((p \to r) \to q) \wedge (\neg q \vee \neg r)$}{((p → r) → q) ∧ (¬q ∨ ¬r)}} 
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $p$ & $q$ & $r$ & $\neg p$& $\neg p$ & $\neg q$ & $\neg q$ & $\neg p \to q$ & $p \oplus \neg q$ & $(\neg p \to q) \leftrightarrow (p \oplus \neg q)$ \\
+            \hline
+            T & T & T & F & T & T & T & \\
+            T & T & F & T & T & F & F & \\
+            T & F & T & T & T & F & F & \\  
+            T & F & F & T & T & F & F & \\
+            F & T & T & F & T & F & F & \\
+            F & T & F & F & T & F & F & \\
+            F & F & T & F & T & F & F & \\
+            F & F & F & T & F & T & F & \\
+            \hline
+        \end{tabular}
+    \end{center}
 
 \section{Answer the following questions concerning logic circuits:}
     \subsection{What compound proposition does the following circuit represent (do not simplify)?} 
