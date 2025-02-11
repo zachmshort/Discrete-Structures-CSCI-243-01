@@ -10,7 +10,7 @@
 \usepackage{enumitem}
 \usepackage{mathpazo}
 
-\textwidth 6.5truein          
+\textwidth 7.5truein          
 \textheight 9.5truein
 \oddsidemargin 0.0in
 \topmargin -.9in
@@ -29,7 +29,7 @@
 \centerline {\bf Computer Science 243}
 \centerline {\bf Spring 2025}
 \centerline {\bf Homework 2}
-% \centerline{\bf My name}
+\centerline{\bf Dr. Davis}
 \vskip .7cm
 
 \bf Due: beginning of class, Monday, 2/10/25 \hfill Points: 50
@@ -40,10 +40,31 @@ Answer the following questions and show your work.  Your final submission must b
 \item {[9 points each]}  Prove the following using logical equivalences (Chapter 1-I, Slides 40-42, or Tables 6 â€“ 8 on pp. 27-28).  
 Label each equivalence used. 
 
-\begin{enumerate}[label=\alph*.]
-\itemsep-0mm
-\item $\neg ((p \rightarrow \neg q) \wedge q) \equiv p \vee \neg q$
-\item $(p \rightarrow (q \rightarrow p)) \wedge ((p \wedge \neg q) \rightarrow p) \equiv$ {\bf T}
+\begin{enumerate}[label=\alph*., itemsep=0mm] 
+\item $\neg ((p \rightarrow \neg q) \equiv p \vee \neg q$ 
+\item  $\neg ((p \rightarrow \neg q)\equiv \neg ((p \rightarrow \neg q) \wedge q)$ 
+\item \hspace{2cm} $\equiv \neg ((\neg p \vee \neg q) \wedge q)$ Implication Rule
+\item \hspace{2cm} $\equiv (\neg(\neg p \vee \neg q) \vee \neg q)$  De Morgan's
+\item \hspace{2cm} $\equiv ((p \wedge q) \vee \neg q)$ De Morgan's
+\item \hspace{2cm} $\equiv (p \vee \neg q)  \wedge (\neg q \vee q)$ Distributive
+\item \hspace{2cm} $\equiv (p \vee \neg q)  \wedge T$ Negation
+\item \hspace{2cm} $\equiv p \vee \neg q$ Identity
+
+\item $(p \rightarrow (q \rightarrow p)) \wedge ((p \wedge \neg q) \rightarrow p) \equiv$ 
+{\bf T}
+\item $(p \rightarrow (q \rightarrow p)) \wedge ((p \wedge \neg q) \rightarrow p) \equiv (p \rightarrow (p \rightarrow (q \rightarrow p)) \wedge ((p \wedge \neg q) \rightarrow p)  $ 
+\item \hspace{5.55cm}$ \equiv (p \rightarrow (p \rightarrow (\neg q \vee  p)) \wedge ((p \wedge \neg q) \rightarrow p)  $ Implication
+\item \hspace{5.55cm}$ \equiv (p \rightarrow (\neg p \vee (\neg q \vee p)) \wedge ((p \wedge \neg q) \rightarrow p)  $ Implication
+\item \hspace{5.55cm}$ \equiv (p \rightarrow (\neg q \vee (\neg p \vee p)) \wedge ((p \wedge \neg q) \rightarrow p)  $ Associative
+\item \hspace{5.55cm}$ \equiv (p \rightarrow (\neg q \vee T) \wedge ((p \wedge \neg q) \rightarrow p)  $ Negation
+\item \hspace{5.55cm}$ \equiv p \rightarrow T \wedge ((p \wedge \neg q) \rightarrow p)  $ Domination
+\item \hspace{5.55cm}$ \equiv T \wedge ((p \wedge \neg q) \rightarrow p)  $ Tautology
+\item \hspace{5.55cm}$ \equiv T \wedge (\neg(p \wedge \neg q) \vee p)  $ Implication
+\item \hspace{5.55cm}$ \equiv T \wedge ((\neg p \vee q) \vee p)  $ De Morgan's
+\item \hspace{5.55cm}$ \equiv T \wedge ((\neg p \vee p) \vee q)  $ Associative
+\item \hspace{5.55cm}$ \equiv T \wedge (T \vee q)  $ Negation
+\item \hspace{5.55cm}$ \equiv T \wedge T  $ Domination
+\item \hspace{5.55cm}$ \equiv T  $ 
 \end{enumerate}
 
 \vskip 0.5cm
@@ -54,10 +75,10 @@ Label each equivalence used.
 (i.e., list the values of $x$ and/or $y$ that make the statement true or false):
 \begin{enumerate}[label=\alph*.]
 \itemsep-0mm
-\item $\forall x \exists y$ $p(x, y)$
-\item $\exists y \forall x$ $p(y, x)$
-\item $\forall x \forall y$ $(p(x, y) \rightarrow q(x))$
-\item $\exists x \forall y$ $(q(x) \rightarrow p(x, y))$
+\item $\forall x \exists y$ $p(x, y)$ Not true, if x = -1 and y = 1, $-1 \neq 1$
+\item $\exists y \forall x$ $p(y, x)$ True, if y is 1, then y would be equal to the entire range of x, 1 = 1 and 1 = $\mid -1 \mid$.
+\item $\forall x \forall y$ $(p(x, y) \rightarrow q(x))$ Not true, $p(1,1) \rightarrow q(1) $ fails.
+\item $\exists x \forall y$ $(q(x) \rightarrow p(x, y))$ True, $q(-1) \rightarrow p(-1,1) $ an$q(-1) \rightarrow p(-1,-1) $ are true, covering the full range of y.
 \end{enumerate}
 
 \vskip 0.5cm
@@ -66,10 +87,10 @@ state the truth value of each of the following statements, along with your reaso
 
 \begin{enumerate}[label=\alph*.]
 \itemsep-0mm
-\item $\forall x \exists y$ $(x^2 = y)$
-\item $\forall x \exists y$ $(x = y^2)$
-\item $\exists x \forall y$ $(y^x = 1)$
-\item $\forall x$ $(x \neq 0 \rightarrow$ $\exists y$ $(xy > 1))$
+\item $\forall x \exists y$ $(x^2 = y)$ False, any number squared is positive. 
+\item $\forall x \exists y$ $(x = y^2)$ False, if you square root both sides the expression becomes $\sqrt{x} = y$, if x is a negative, this fails because an imaginary number cannot equal a negative integer.
+\item $\exists x \forall y$ $(y^x = 1)$ True, if x = 0, any number to the power of 0 equals 1.
+\item $\forall x$ $(x \neq 0 \rightarrow$ $\exists y$ $(xy > 1))$ False, if x is positive, there's no y you could multiply it by to make it positive because all y values are negative. 
 \end{enumerate}
 
 \vskip 0.5cm
@@ -85,13 +106,12 @@ translate the following English expressions into first-order logic statements:
 
 \begin{enumerate}[label=\alph*.]
 \itemsep-0mm
-\item Some people living in Williamsburg are students.
-\item All students who live in Williamsburg email at least one other student.
-\item Nobody emails every student.
-\item No students who live in Williamsburg email themselves.
+\item Some people living in Williamsburg are students. 
+$\exists x (S(x) \wedge W(x)$
+\item 
+All students who live in Williamsburg email at least one other student.\subsection{$\forall x  ((S(x) \wedge W(x))  \rightarrow \exists y(S(y)\wedge E(x,y))$} 
+\item Nobody emails every student. $\neg \exists x \forall y (S(y) \rightarrow E(x,y))$
+\item No students who live in Williamsburg email themselves. $\neg \exists x ((S(x) \wedge W(x)) \rightarrow E(x,x))$
 \end{enumerate}
-
-
 \end{enumerate}
-
 \end{document}
