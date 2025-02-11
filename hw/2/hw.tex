@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+
+\usepackage{exscale}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{times,mathptm}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{mathpazo}
+
+\textwidth 6.5truein          
+\textheight 9.5truein
+\oddsidemargin 0.0in
+\topmargin -.9in
+\thispagestyle{empty} 
+
+\parindent 0pt          
+\parskip 0pt
+
+\begin{document}
+
+{\bf Name: Zachary Short}
+\hspace{10.75cm}
+{\bf Section: 1}
+
+\begin{large}
+\centerline {\bf Computer Science 243}
+\centerline {\bf Spring 2025}
+\centerline {\bf Homework 2}
+% \centerline{\bf My name}
+\vskip .7cm
+
+\bf Due: beginning of class, Monday, 2/10/25 \hfill Points: 50
+\end{large}
+\vskip 0.5cm
+Answer the following questions and show your work.  Your final submission must be completely your own work.
+\begin{enumerate}
+\item {[9 points each]}  Prove the following using logical equivalences (Chapter 1-I, Slides 40-42, or Tables 6 â€“ 8 on pp. 27-28).  
+Label each equivalence used. 
+
+\begin{enumerate}[label=\alph*.]
+\itemsep-0mm
+\item $\neg ((p \rightarrow \neg q) \wedge q) \equiv p \vee \neg q$
+\item $(p \rightarrow (q \rightarrow p)) \wedge ((p \wedge \neg q) \rightarrow p) \equiv$ {\bf T}
+\end{enumerate}
+
+\vskip 0.5cm
+\item {[3 points each]}  Consider the following, where the domain for $x$ and $y$ is $\{-1, 1\}$:\\
+\\ \hspace*{2cm} $p(x,y): x = |y|$
+\\ \hspace*{2cm} $q(x): x < 0$ \\
+\\ Based on the above assignments, state the truth value for the each of following, along with your reasoning 
+(i.e., list the values of $x$ and/or $y$ that make the statement true or false):
+\begin{enumerate}[label=\alph*.]
+\itemsep-0mm
+\item $\forall x \exists y$ $p(x, y)$
+\item $\exists y \forall x$ $p(y, x)$
+\item $\forall x \forall y$ $(p(x, y) \rightarrow q(x))$
+\item $\exists x \forall y$ $(q(x) \rightarrow p(x, y))$
+\end{enumerate}
+
+\vskip 0.5cm
+\item {[3 points each]}  Given a domain of the integers for $x$ and the negative integers for $y$, 
+state the truth value of each of the following statements, along with your reasoning.
+
+\begin{enumerate}[label=\alph*.]
+\itemsep-0mm
+\item $\forall x \exists y$ $(x^2 = y)$
+\item $\forall x \exists y$ $(x = y^2)$
+\item $\exists x \forall y$ $(y^x = 1)$
+\item $\forall x$ $(x \neq 0 \rightarrow$ $\exists y$ $(xy > 1))$
+\end{enumerate}
+
+\vskip 0.5cm
+
+% \newpage
+
+\item {[2 points each]}  Given a domain of all people and the following predicates:
+\\ \hspace*{3cm} {$S(x)$}: $x$ is a student.
+\\ \hspace*{3cm} {$W(x)$}: $x$ lives in Williamsburg.
+\\ \hspace*{3cm} {$E(x,y)$}: $x$ emails $y$.
+
+translate the following English expressions into first-order logic statements:
+
+\begin{enumerate}[label=\alph*.]
+\itemsep-0mm
+\item Some people living in Williamsburg are students.
+\item All students who live in Williamsburg email at least one other student.
+\item Nobody emails every student.
+\item No students who live in Williamsburg email themselves.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
